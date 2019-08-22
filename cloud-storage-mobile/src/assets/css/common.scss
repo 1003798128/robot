@@ -1,0 +1,46 @@
+@import "./variable";
+@import '~vant/lib/index.css';
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix:after {
+  width: 0;
+  height: 0;
+  display: table;
+  clear: both;
+  content: "";
+}
+
+// 当单行省略
+.single-line-ellipsis {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: none;
+}
+
+body {
+  background: #F0F2F5;
+}
+
+.van-button--primary {
+  background-color: #00A5FF;
+  border-color: #00A5FF;
+  color: #fff;
+}
+
+.van-button--default {
+  background-color: #fff;
+  border-color: #00A5FF;
+  color: #00A5FF;
+}

@@ -1,0 +1,115 @@
+.updateApp {
+  .model {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: #000;
+  }
+  .msbox {
+    width: 5.4rem !important;
+    font-size: 0.36rem !important;
+    border-radius: 0.08rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    background-color: #fff;
+    width: 85%;
+    border-radius:0.24rem;
+    font-size: 16px;
+    -webkit-user-select: none;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: .2s;
+    transition: .2s;
+  }
+
+  .header {
+    font-family: PingFangSC-Regular;
+    font-size: 13px;
+    color: #44474D;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: .32rem;
+  }
+
+  .contentVersion {
+    padding-left: .32rem;
+    padding-right: .32rem;
+    margin-bottom: .32rem;
+    font-family: PingFang-SC-Medium;
+    font-size: .28rem;
+    color: #44474D;
+    letter-spacing: 0;
+    line-height: .48rem;
+    word-wrap:break-word;
+  }
+
+  .ok {
+    float: right;
+  }
+
+  .logo {
+    width: 1.12rem;
+    height: 1.12rem;
+    margin: 0.4rem auto;
+    background: #E4393C;
+    border-radius: 0.24rem;
+    color: #ffffff;
+    font-size: 1.12rem;
+    line-height: 1.12rem;
+    text-align: center;
+    span {
+      font-size: inherit;
+    }
+  }
+  .footer {
+    border-top: 1px solid #dddddd;
+    height: .88rem;
+    line-height: .88rem;
+    font-family: PingFangSC-Regular;
+    color: #E4393C;
+    span {
+      display: inline-block;
+      width: 50%;
+      text-align: center;
+      font-size: .36rem;
+    }
+    span:nth-child(1) {
+      border-right: 1px solid #dddddd;
+    }
+  }
+
+  .progress {
+    padding-left: .32rem;
+    padding-right: .32rem;
+    position: relative;
+    progress {
+      width: 100%;
+    }
+    em {
+      position: absolute;
+      font-style: normal;
+      top: .1rem;
+      left: 45%;
+      font-size: .26rem;
+    }
+  }
+
+  .progress-wrapper {
+
+    .progress-title {
+      text-align: center;
+      margin: .22rem 0;
+    }
+    .progress-scale {
+      text-align: center;
+      margin: .22rem 0;
+    }
+  }
+}
