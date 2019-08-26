@@ -12,7 +12,8 @@ import VueLazyLoad from 'vue-lazyload'
 import VueTouch from 'vue-touch'
 import './assets/css/onload.scss'
 // import apis from './apis/index'
-
+import store from '@/store'
+import 'vant/lib/index.css'
 const EMPTY_OBJECT = {}
 
 import('./assets/js/template')
@@ -45,6 +46,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router: initRouter(),
+  store: store.instance,
   components: { App },
   created () {
     // let clickTime = new Date()

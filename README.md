@@ -8,13 +8,6 @@ cd ../
 cordova platforms add android  --增加android工程依赖
 cordova build android    ---打包APK项目
 
-在platforms/android/app目录下新建build-extras.gradle文件
-在文件中添加内容
-configurations.all {
-resolutionStrategy { 
-    force 'com.android.support:support-v4:27.1.0'
-}}
-
 打测试包 
 cordova build android
 打生产包 

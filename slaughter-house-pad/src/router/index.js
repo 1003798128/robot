@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import axios from 'axios'
 import _ from 'lodash'
 
-const helloWorld = () => import('@/views/HelloWorld')
+const login = () => import('@/views/login/Login')
 
 Vue.use(Router)
 Vue.prototype.$ajax = axios
@@ -11,12 +11,12 @@ Vue.prototype.$ajax = axios
 const routes = () => [
   {
     path: '*',
-    component: helloWorld
+    component: login
   },
   {
-    path: '/helloWorld',
-    name: 'helloWorld',
-    component: helloWorld
+    path: '/login',
+    name: 'login',
+    component: login
   }
 ]
 

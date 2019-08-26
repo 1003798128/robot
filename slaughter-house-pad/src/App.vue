@@ -16,7 +16,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     height: 100%;
-    background: #f7f7fa;
+    /* background: #f7f7fa; */
+    background: white;
+    height: 36px;
+    line-height: 36px;
   }
 
   * {
@@ -31,7 +34,7 @@
 
   body {
     height: auto;
-    background-color: #ecf0f3;
+    /* background-color: #ecf0f3; */
   }
   .icon {
     width: .56rem;
