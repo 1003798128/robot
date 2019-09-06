@@ -23,7 +23,7 @@ const record = {
    */
   mutations: {
     SET_LOGIN_INFO (state, payload) {
-      state.formData = payload
+      state.loginInfo = payload
     }
   },
   /**

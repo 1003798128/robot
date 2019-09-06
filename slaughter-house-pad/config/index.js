@@ -44,7 +44,7 @@ module.exports = {
   },
   dev: {
     env: devEnv,
-    port: process.env.PORT || 8880,
+    port: process.env.PORT || 8808,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',

@@ -2,11 +2,11 @@
   <div>
     <div class="head">
       <span>兴旺公司生猪屠宰场检测溯源监管系统</span>
-      <van-button v-if="loginInfo.name" round class="right-icon">{{ loginInfo.name }}</van-button>
-      <span v-else class="title-version">V1.0</span>
-
+      <div class="right-icon">
+        <span style="color:white">
+          张</span>
+      </div>
     </div>
-    <div class="line"></div>
   </div>
 </template>
 <script>
@@ -34,19 +34,25 @@
 .head{
   height: 30px;
   padding: 20px;
-  font-size:23px
+  font-size:23px;
+  background: url("../assets/images/top_bg.png");
+color: white
 }
-.line{
-  height: 1px;
-  width: 100%;
-  background-color: grey
-}
+// .line{
+//   height: 1px;
+//   width: 100%;
+//   background-color: grey
+// }
 .right-icon{
+  color: white;
   float:right;
-  background-color:transparent;
-border: 1px solid grey;
-height: 36px;
-line-height: 36px
+  background-color:#C5C5F8;
+  border-radius: 4em;
+  height: 36px;
+  width:36px;
+  text-align: center
+// height: 36px;
+// line-height: 36px
 }
 .van-button__text{
   color: black

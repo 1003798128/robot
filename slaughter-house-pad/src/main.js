@@ -14,6 +14,8 @@ import './assets/css/onload.scss'
 // import apis from './apis/index'
 import store from '@/store'
 import 'vant/lib/index.css'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 const EMPTY_OBJECT = {}
 
 import('./assets/js/template')
@@ -29,6 +31,7 @@ Vue.prototype.$http = axios
 
 Vue.use(uploader)
 Vue.use(Vant)
+Vue.use(ElementUI)
 Vue.use(VueImg)
 Vue.use(jq)
 Vue.config.productionTip = false
@@ -41,7 +44,7 @@ Vue.config.productionTip = false
 // Object.keys(filters).forEach(key => {
 //   Vue.filter(key, filters[key])
 // })
-
+window.screen.orientation.lock('landscape')
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -1,4 +1,5 @@
 @import "./variable";
+@import "./element-ui";
 
 html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
   margin: 0;
@@ -94,98 +95,6 @@ textarea {
   *display: inline;
   *zoom: 1;
 }
-/*.dir {*/
-  /*background: url("../images/directory-s.png") no-repeat;*/
-  /*display: inline-block;*/
-  /*width: 0.56rem;*/
-  /*height: 0.51rem;*/
-  /*background-size: 0.56rem 0.51rem;*/
-/*}*/
-
-/*.pic {*/
-  /*background: url("../images/pic-s.png") no-repeat;*/
-  /*display: inline-block;*/
-  /*width: 0.56rem;*/
-  /*height: 0.51rem;*/
-  /*background-size: 0.56rem 0.51rem;*/
-/*}*/
-/*.default{*/
-  /*background: url("../images/default-s.png") no-repeat center;*/
-  /*display: inline-block;*/
-  /*width: 0.56rem;*/
-  /*height: 0.51rem;*/
-  /*background-size: 0.56rem 0.51rem;*/
-/*}*/
-/*.pdf{*/
-  /*background: url("../images/pdf-s.png") no-repeat center;*/
-  /*display: inline-block;*/
-  /*width: 0.56rem;*/
-  /*height: 0.51rem;*/
-  /*background-size: 0.56rem 0.51rem;*/
-/*}*/
-/*.word{*/
-  /*background: url("../images/word-s.png") no-repeat center;*/
-  /*display: inline-block;*/
-  /*width: 0.56rem;*/
-  /*height: 0.51rem;*/
-  /*background-size: 0.56rem 0.51rem;*/
-/*}*/
-/*.wps{*/
-  /*background: url("../images/wps-s.png") no-repeat center;*/
-  /*display: inline-block;*/
-  /*width: 0.56rem;*/
-  /*height: 0.51rem;*/
-  /*background-size: 0.56rem 0.51rem;*/
-/*}*/
-/*.ppt{*/
-  /*background: url("../images/ppt-s.png") no-repeat center;*/
-  /*display: inline-block;*/
-  /*width: 0.56rem;*/
-  /*height: 0.51rem;*/
-  /*background-size: 0.56rem 0.51rem;*/
-/*}*/
-/*.txt{*/
-  /*background: url("../images/txt-s.png") no-repeat center;*/
-  /*display: inline-block;*/
-  /*width: 0.56rem;*/
-  /*height: 0.51rem;*/
-  /*background-size: 0.56rem 0.51rem;*/
-/*}*/
-/*.html{*/
-  /*background: url("../images/html-s.png") no-repeat center;*/
-  /*display: inline-block;*/
-  /*width: 0.56rem;*/
-  /*height: 0.51rem;*/
-  /*background-size: 0.56rem 0.51rem;;*/
-/*}*/
-/*.music{*/
-  /*background: url("../images/music-s.png") no-repeat center;*/
-  /*display: inline-block;*/
-  /*width: 0.56rem;*/
-  /*height: 0.51rem;*/
-  /*background-size: 0.56rem 0.51rem;*/
-/*}*/
-/*.excel{*/
-  /*background: url("../images/excel-s.png") no-repeat center;*/
-  /*display: inline-block;*/
-  /*width: 0.56rem;*/
-  /*height: 0.51rem;*/
-  /*background-size: 0.56rem 0.51rem;*/
-/*}*/
-/*.package{*/
-  /*background: url("../images/package-s.png") no-repeat center;*/
-  /*display: inline-block;*/
-  /*width: 0.56rem;*/
-  /*height: 0.51rem;*/
-  /*background-size: 0.56rem 0.51rem;*/
-/*}*/
-// .shareDir{
-//   background: url("../images/sharedir.png") no-repeat center;
-//   display: inline-block;
-//   width: 0.56rem;
-//   height: 0.51rem;
-//   background-size: 0.56rem 0.51rem;
-// }
 .vue-lb-container{
   z-index: 9999999999999999999!important;
 }

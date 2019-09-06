@@ -4,6 +4,7 @@ import axios from 'axios'
 import _ from 'lodash'
 
 const login = () => import('@/views/login/Login')
+const main = () => import('@/views/main/Main')
 
 Vue.use(Router)
 Vue.prototype.$ajax = axios
@@ -17,6 +18,11 @@ const routes = () => [
     path: '/login',
     name: 'login',
     component: login
+  },
+  {
+    path: '/main',
+    name: 'main',
+    component: main
   }
 ]
 
