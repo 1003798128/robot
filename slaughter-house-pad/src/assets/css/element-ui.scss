@@ -18,3 +18,49 @@ font-size: 19px
         border-color: #409EFF;
         color: #409EFF;
       }
+      .van-dialog{
+        font-size: 19px;
+      }
+    .el-input__inner {
+        height: 50px !important;
+        line-height: 50px !important;
+      }
+      .el-input{
+        font-size: inherit;
+      }
+      .main {
+        & /deep/ .editResult {
+          width: 600px !important;
+            .van-icon {
+              float: right;
+              margin-right: 20px;
+            }
+              .el-input__inner {
+                height: 50px !important;
+                line-height: 50px !important;
+                padding: 0 8px;
+              }
+        }
+      }
+      .van-dropdown-menu__title::after {
+            top: 20px;
+      }
+      .van-uploader{
+        width: 100%
+      }
+      .van-uploader__input-wrapper{
+        width: 100%
+      }
+      .van-dropdown-menu__item {
+        -webkit-justify-content: initial;
+        justify-content: initial;
+      }
+
+      .img_div {
+        .van-image__img {
+          padding: 10px;
+          height: 180px;
+          width: 180px;
+          border: 1px #E4E7EC solid
+        }
+      }

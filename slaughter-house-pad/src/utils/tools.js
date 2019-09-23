@@ -64,12 +64,8 @@ const bytesToSize = function (bytes) {
   var i = Math.floor(Math.log(bytes) / Math.log(k))
   return (bytes / Math.pow(k, i)).toPrecision(3) + sizes[i]
 }
-const formaTime = function (val) {
-  if (val !== '' || undefined || null) {
-    return new Date(val).format('yyyy-MM-dd HH:mm')
-  } else {
-    return ''
-  }
+const formaTime = function (value) {
+  return value.substring(0, 4) + '/' + value.substring(4, 6) + '/' + value.substring(6, 8)
 }
 let setData_null = function (state) {
   state = state + 'List'
@@ -156,6 +152,34 @@ let setData = function (file, state) {
   }
 }
 
+const camera = function (succ) {
+  var options = {
+    // Some common settings are 20, 50, and 100
+    quality: 50,
+    destinationType: Camera.DestinationType.FILE_URI,
+    sourceType: Camera.PictureSourceType.CAMERA,
+    // In this app, dynamically set the picture source, Camera or photo gallery
+    encodingType: Camera.EncodingType.JPEG,
+    mediaType: Camera.MediaType.PICTURE,
+    allowEdit: true,
+    correctOrientation: true // Corrects Android orientation quirks
+  }
+  navigator.camera.getPicture(function cameraSuccess (imageUri) {
+    console.log(imageUri)
+    window.resolveLocalFileSystemURL(imageUri, function success (fileEntry) {
+      console.log(fileEntry)
+      fileEntry.file(function (file) {
+        console.log(file)
+        succ(file)
+      }, () => {
+        console.log('file失败')
+      })
+    }, function () {})
+  }, function cameraError (error) {
+    console.debug('Unable to obtain picture: ' + error, 'app')
+  }, options)
+}
+
 export default {
   newLocalStorage,
   getLocalStorage,
@@ -165,5 +189,6 @@ export default {
   formaTime,
   setLocalStorage,
   setData,
-  setData_null
+  setData_null,
+  camera
 }

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="1" id="com.xingwang.slaughter" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="2" id="com.xingwang.slaughter" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>屠宰场监管系统</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -18,9 +18,9 @@
     <platform name="android">
         <allow-intent href="market:*" />
         <preference name="Orientation" value="landscape" />
-        <icon density="ldpi" src="res/icon/android/icon-36-ldpi.png" />
+        <!-- <icon density="ldpi" src="res/icon/android/icon-36-ldpi.png" />
         <icon density="mdpi" src="res/icon/android/icon-48-mdpi.png" />
-        <icon density="hdpi" src="res/icon/android/icon-72-hdpi.png" />
+        <icon density="hdpi" src="res/icon/android/icon-72-hdpi.png" /> -->
         <icon density="xhdpi" src="res/icon/android/icon-96-xhdpi.png" />
         <icon density="xxhdpi" src="res/icon/android/icon-96-xhdpi.png" />
         <icon density="xxxhdpi" src="res/icon/android/icon-96-xhdpi.png" />

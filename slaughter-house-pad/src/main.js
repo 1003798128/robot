@@ -52,6 +52,17 @@ new Vue({
   store: store.instance,
   components: { App },
   created () {
+    document.addEventListener('deviceready', () => {
+      console.log('onDeviceReady')
+    }, false)
+// 监听键盘隐藏
+    window.addEventListener('native.keyboardshow', function (e) {
+      document.documentElement.style.height = 'auto'
+    })
+// 监听键盘隐藏
+    window.addEventListener('native.keyboardhide', function (e) {
+      document.documentElement.style.height = '100%'
+    })
     // let clickTime = new Date()
     // window['goBack'] = () => {
     //   if (this.$route.name === 'index' || this.$route.name === 'shareFile' || this.$route.name === 'publicSpace') {

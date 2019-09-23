@@ -59,15 +59,7 @@ module.exports = {
     // 启用本地开发代理
     proxyTable: {
       '/api': {
-        // target: 'http://172.16.6.106:50374',
-        // target: 'http://172.16.6.49:50374', // dev环境
-        // target: 'http://172.16.6.50:50374',
-        // target: 'http://172.16.6.101:3000',
-        // target: 'http://172.16.6.51:8863',
-        // target: 'http://172.16.5.240:8080',// 黄浩
-        target: 'http://172.16.6.106:50374',
-        // target: 'http://101.37.189.238',
-        // target: 'http://127.0.0.1:8080',
+        target: 'http://47.103.15.136:8080',
         pathRewrite: { '^/api': '' }
       }
     }

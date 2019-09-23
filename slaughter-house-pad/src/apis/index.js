@@ -5,7 +5,6 @@ import Qs from 'qs'
 import router from '../router'
 
 const apps = process.env.APP_CONFIG
-const platform = process.env.PLATFORM
 // const networkEnv = process.env.NETWORK_ENVRIOMENT
 
 // 全局axios设定，post的请求头默认是formData
@@ -38,8 +37,7 @@ export default {
       ..._.omit(configMore, 'headers'),
       headers: {
         'X-Requested-With': 'XMLHttpRequest', // 标记ajax的异步请求
-        'CS-PLATFORM': platform, // 平台标示
-        'CS-NETWORKENV': 'public',// 网络标示
+            'Content-Type': (api.contentType === 'json' ? 'application/json' : api.contentType) || 'application/x-www-form-urlencoded; charset=utf-8',
         ...configMore.headers
       },
     }
@@ -63,7 +61,6 @@ export default {
         return Qs.stringify(data)
       }]
     }
-
     let $http = axios(config)
     $http.catch(function (exception) {
       let resData
@@ -82,15 +79,6 @@ export default {
         switch (exception.response.status) {
           case 400:
             if (resData.errorCode !== undefined && resData.errorCode === '400sec-core-301') {
-              MessageBox({
-                title: '',
-                message: resData.errorMessage,
-                closeOnClickModal: false
-              }).then(() => {
-                router.replace({
-                  path: '/login'
-                })
-              })
             } else if (resData.errorMessage) {
               Toast({
                 message: resData.errorMessage,
