@@ -79,7 +79,7 @@
         </van-row>
         <van-row>
           <van-col span="4" class="span4">瘦肉精检测结果明细</van-col>
-          <van-col span="8" class="span8">{{ test2() }}</van-col>
+          <van-col span="8" class="span8">{{ test2 }}</van-col>
           <van-col span="4" class="span4">非洲猪瘟检测结果</van-col>
           <van-col span="8" class="span8">{{ tuzaiBatchInfo.checkResultInfo?tuzaiBatchInfo.checkResultInfo.asfCheckResult === 1?'阴性':'阳性':'-' }}</van-col>
         </van-row>
@@ -90,25 +90,25 @@
       <div class="detail_tips_title">图片信息</div>
       <div style="padding-bottom:16px">
         <div class="img_div first_div" @click="openImg(img1,'动物检疫合格证明')">
-          <van-image v-if="img1" :src="img1" lazy-load>
+          <van-image v-if="img1" :src="img1" height="180" width="180" lazy-load>
             <template v-slot:loading>
-              <van-loading type="spinner" size="20" />
+              <van-loading type="spinner" color="#1989fa" size="20" />
             </template>
           </van-image>
           <img v-else>
-          <div>动物检疫合格证明</div>
+          <div >动物检疫合格证明</div>
         </div>
         <div class="img_div" @click="openImg(img2,'非洲猪瘟检测报告单')">
           <van-image v-if="img2" :src="img2" lazy-load>
             <template v-slot:loading>
-              <van-loading type="spinner" size="20" />
+              <van-loading :type="spinner" size="40" />
             </template>
           </van-image>
           <img v-else>
           <div>非洲猪瘟检测报告单</div>
         </div>
         <div class="img_div" @click="openImg(img3,'消毒凭证')">
-          <van-image v-if="img3" :src="img3" lazy-load>
+          <van-image v-if="img3" :src="img3">
             <template v-slot:loading>
               <van-loading type="spinner" size="20" />
             </template>
@@ -125,7 +125,7 @@
           <van-icon color="white" name="cross" style="line-height: inherit;" @click="close" />
         </div>
         <div class="tips_body">
-          <img v-lazy="showImg.imgUrl">
+          <img :src="showImg.imgUrl">
         </div>
       </div>
     </van-popup>
@@ -166,6 +166,29 @@
         } else {
           return 2
         }
+      },
+      test2 () {
+        let testStr = ''
+        if (!this.tuzaiBatchInfo.checkResultInfo || this.tuzaiBatchInfo.checkResultInfo.clenCheckResult === 0) {
+          testStr = '-'
+          return testStr
+        }
+        if (this.tuzaiBatchInfo.checkResultInfo.clenCheckResult === 1) {
+          testStr = testStr + '克伦特罗-阴性;'
+        } else if (this.tuzaiBatchInfo.checkResultInfo.clenCheckResult === 2) {
+          testStr = testStr + '克伦特罗-阳性;'
+        }
+        if (this.tuzaiBatchInfo.checkResultInfo.rhciCheckResult === 1) {
+          testStr = testStr + '莱克多巴胺-阴性;'
+        } else if (this.tuzaiBatchInfo.checkResultInfo.rhciCheckResult === 2) {
+          testStr = testStr + '莱克多巴胺-阳性;'
+        }
+        if (this.tuzaiBatchInfo.checkResultInfo.salCheckResult === 1) {
+          testStr = testStr + '沙丁胺醇-阴性'
+        } else if (this.tuzaiBatchInfo.checkResultInfo.salCheckResult === 2) {
+          testStr = testStr + '沙丁胺醇-阳性'
+        }
+        return testStr
       }
     },
     created () {
@@ -200,29 +223,6 @@
           this.showImg.title = title
           this.show = true
         }
-      },
-      test2 () {
-        let testStr = ''
-        if (!this.tuzaiBatchInfo.checkResultInfo) {
-          testStr = '-'
-          return testStr
-        }
-        if (this.tuzaiBatchInfo.checkResultInfo.clenCheckResult === 1) {
-          testStr = testStr + '克伦特罗-阴性;'
-        } else if (this.tuzaiBatchInfo.checkResultInfo.clenCheckResult === 2) {
-          testStr = testStr + '克伦特罗-阳性;'
-        }
-        if (this.tuzaiBatchInfo.checkResultInfo.rhciCheckResult === 1) {
-          testStr = testStr + '莱克多巴胺-阴性;'
-        } else if (this.tuzaiBatchInfo.checkResultInfo.rhciCheckResult === 2) {
-          testStr = testStr + '莱克多巴胺-阳性;'
-        }
-        if (this.tuzaiBatchInfo.checkResultInfo.salCheckResult === 1) {
-          testStr = testStr + '沙丁胺醇-阴性'
-        } else if (this.tuzaiBatchInfo.checkResultInfo.salCheckResult === 2) {
-          testStr = testStr + '沙丁胺醇-阳性'
-        }
-        return testStr
       },
       formateTime (val) {
         return util.formaTime(val)
@@ -268,8 +268,9 @@ background-color: #F6F7F9
   img{
     margin-top: 10px;
     padding: 10px;
-    height: 180px;
-    width: 180px;
+    margin-bottom: 13px;
+    height: 160px;
+    width: 160px;
     border: 1px #E4E7EC solid
   }
   div{
