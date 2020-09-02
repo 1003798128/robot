@@ -14,7 +14,6 @@ cordova build android
 cordova build android --release --buildConfig ./build/android/build.json
 ```
 
-### 云盘APP用到的cordova插件
 "cordova-android": "^7.0.0"  --- 项目使用android的版本为7.0.0
 "cordova-plugin-app-version": "^0.1.9", ---获取当前app的版本号
 "cordova-plugin-camera": "^2.4.1",  --- 调用手机的摄像头
