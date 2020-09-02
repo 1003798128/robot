@@ -14,14 +14,20 @@ const getSessionStorage = function (localStorageName, key) {
 }
 
 const setLocalStorage = function (localStorageName, value) {
-  window.$storage.set({ [localStorageName]: JSON.stringify(value) })
+  window.$storage.set({
+    [localStorageName]: JSON.stringify(value)
+  })
 }
 
 const newLocalStorage = function (localStorageName, localStorageValue) {
   if (typeof localStorageValue === 'object') {
-    window.$storage.set({ [localStorageName]: JSON.stringify(localStorageValue) })
+    window.$storage.set({
+      [localStorageName]: JSON.stringify(localStorageValue)
+    })
   } else {
-    window.$storage.set({ [localStorageName]: localStorageValue })
+    window.$storage.set({
+      [localStorageName]: localStorageValue
+    })
   }
 }
 
@@ -73,7 +79,9 @@ let setData_null = function (state) {
   let userId = JSON.parse(window.sessionStorage.mobileData).id
   // 判断localStorage中是否存在该记录
   if (!window.$storage.get(state)) {
-    window.$storage.set({ [state]: JSON.stringify([]) })
+    window.$storage.set({
+      [state]: JSON.stringify([])
+    })
   }
   // 取出localStorage中该记录
   let stroge = JSON.parse(window.$storage.get(state))
@@ -94,7 +102,9 @@ let setData_null = function (state) {
       if (state === 'upsuccessList') {
         stroge[index].upsuccessList = []
       }
-      window.$storage.set({ [state]: JSON.stringify(stroge) })
+      window.$storage.set({
+        [state]: JSON.stringify(stroge)
+      })
     }
   })
 }
@@ -104,7 +114,9 @@ let setData = function (file, state) {
   let userId = JSON.parse(window.sessionStorage.mobileData).id
   // 判断localStorage中是否存在该记录
   if (!window.$storage.get(state)) {
-    window.$storage.set({ [state]: JSON.stringify([]) })
+    window.$storage.set({
+      [state]: JSON.stringify([])
+    })
   }
   // 取出localStorage中该记录
   let stroge = JSON.parse(window.$storage.get(state))
@@ -131,24 +143,40 @@ let setData = function (file, state) {
           })
         }
       }
-      window.$storage.set({ [state]: JSON.stringify(stroge) })
+      window.$storage.set({
+        [state]: JSON.stringify(stroge)
+      })
       flag = true
     }
   })
   if (!flag) {
     if (state === 'downerrorList') {
-      stroge.push({ id: userId, [state]: [file] })
+      stroge.push({
+        id: userId,
+        [state]: [file]
+      })
     }
     if (state === 'downsuccessList') {
-      stroge.push({ id: userId, [state]: [file] })
+      stroge.push({
+        id: userId,
+        [state]: [file]
+      })
     }
     if (state === 'uperrorList') {
-      stroge.push({ id: userId, [state]: [file] })
+      stroge.push({
+        id: userId,
+        [state]: [file]
+      })
     }
     if (state === 'upsuccessList') {
-      stroge.push({ id: userId, [state]: [file] })
+      stroge.push({
+        id: userId,
+        [state]: [file]
+      })
     }
-    window.$storage.set({ [state]: JSON.stringify(stroge) })
+    window.$storage.set({
+      [state]: JSON.stringify(stroge)
+    })
   }
 }
 
@@ -164,9 +192,9 @@ const camera = function (succ) {
     allowEdit: true,
     correctOrientation: true // Corrects Android orientation quirks
   }
-  navigator.camera.getPicture(function cameraSuccess (imageUri) {
+  navigator.camera.getPicture(function cameraSuccess(imageUri) {
     console.log(imageUri)
-    window.resolveLocalFileSystemURL(imageUri, function success (fileEntry) {
+    window.resolveLocalFileSystemURL(imageUri, function success(fileEntry) {
       console.log(fileEntry)
       fileEntry.file(function (file) {
         console.log(file)
@@ -175,7 +203,7 @@ const camera = function (succ) {
         console.log('file失败')
       })
     }, function () {})
-  }, function cameraError (error) {
+  }, function cameraError(error) {
     console.debug('Unable to obtain picture: ' + error, 'app')
   }, options)
 }

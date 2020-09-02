@@ -1,282 +1,36 @@
-@import "./variable";
-@import "./element-ui";
-
-html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
-  margin: 0;
-  padding: 0;
-}
-// *{box-sizing: border-box;}
-html, body {
-  min-height: 100%;
-}
-
-body {
-  font-family: "Microsoft YaHei";
-  font-size:0.2rem;
-  color:#333;
-  height: 100vh !important;
-  margin: 0;
-}
-
-h1, h2, h3, h4, h5, h6{font-weight:normal;}
-ul,ol {
-  list-style: none;
-}
-img {
-  border: none;
-  vertical-align: middle;
-}
-
-a {
-  text-decoration: none;
-}
-.mint-actionsheet-button, .mint-actionsheet-listitem{
-  height: 1rem!important;
-  line-height: 1rem !important;
-  font-size: 0.36rem !important;
-  color: #000000 !important;
-}
-table {
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-
-input, textarea {
-  outline: none;
-  border: none;
-}
-
-textarea {
-  resize: none;
-  overflow: auto;
-}
-
-.clearfix {
-  zoom: 1;
-}
-
-.clearfix:after {
-  content: ".";
-  width: 0;
-  height: 0;
-  visibility: hidden;
+.van-dropdown-menu {
   display: block;
-  clear: both;
-  overflow:hidden;
+  width: 100px;
+  float: right;
+
+  &/deep/ .van-dropdown-menu__bar {
+    height: 30px;
+  }
 }
 
-.fl {
-  float: left
-}
-
-.fr {
-  float: right
-}
-
-.tl {
-  text-align: left;
-}
-
-.tc {
-  text-align: center
-}
-
-.tr {
-  text-align: right;
-}
-
-.ellipse {
+.wrapper {
+  height: 82vh;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.inline{
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-}
-.vue-lb-container{
-  z-index: 9999999999999999999!important;
-}
-.excel{
-  color: #36AB60;
-}
-.pdf{
-  color: #E0620D;
-}
-.word{
-  color: #2985FD;
-}
-.txt{
-  color: #17ABE3;
-}
-.html{
-  color:#EFC96D;
-}
-.pic{
-  color: #3EA362;
-}
-.muisc{
-  color: #EA5986;
-}
-.dir{
-  color: #FED531;
-}
-.mint-tab-item-label{
-  line-height: initial!important;
-}
-.mint-tabbar {
-  height: 0.98rem;
-  font-size: 0.2rem !important;
+  background: #eee;
+  overflow-y: scroll;
 }
 
-.mint-tab-item-icon img {
-  width: 0.34rem;
-  height: 0.36rem;
-  margin: 0 auto;
+.content {
+  height: max-content;
+  color: #7d88a6;
 }
 
-.mint-tab-item-label a {
-  color: #7f8389 !important;
+.wrapper4 {
+  height: 76vh;
+  overflow: hidden;
+  background: #eee;
+  overflow-y: scroll;
 }
 
-.mint-tab-item-label img {
-  width: 0.34rem;
-  height: 0.36rem;
-  margin: 0 auto;
-  display: block;
+.pic {
+  float: left;
 }
 
-.mint-tab-item-label {
-  font-size: 0.2rem !important;
-  line-height: initial;
-}
-
-.active {
-  color: #E4393C !important;
-}
-
-.mint-tab-item-icon {
-  width: 100%;
-  height: auto;
-  margin: 0;
-}
-
-.mint-tab-item {
-  /*padding: 0.17rem 0 0 0;*/
-  padding: .1rem .2rem;
-}
-// .icon-success {
-//   background: url("../../assets/images/success_icon.png") center no-repeat;
-//   background-size: 0.98rem 0.7rem;
-//   margin: 0 auto;
-//   width: 0.98rem;
-//   height: 0.7rem;
-// }
-
-// .icon-error {
-//   background: url("../../assets/images/xx.png") center no-repeat;
-//   margin: 0 auto;
-//   width: 0.98rem;
-//   /* height: 0.7rem; */
-//   height: .98rem;
-//   border-radius: 50%;
-//   border: 3px solid;
-//   background-size: 50%;
-// }
-.mint-msgbox {
-  width: 5.6rem !important;
-  height: 3.34rem !important;
-  font-size: 0.36rem !important;
-  border-radius: 0.08rem;
-}
-.mint-msgbox-errormsg{
-  font-size: 0.2rem!important;
-}
-/*新建文件夹*/
-
-
-.mint-toast {
-  z-index: 2001;
-  width: 2.4rem;
-  height: 2.4rem;
-  padding: 0.4rem 0.2rem 0.4rem 0.2rem !important;
-}
-
-.mint-toast-text {
-  padding-top: 0.2rem !important;
-  font-size: 0.26rem;
-  color: #ffffff;
-}
-
-
-
-.mint-msgbox-content {
-  height: 2.34rem;
-  padding: 0.5rem 0.4rem 0.3rem 0.4rem;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.mint-msgbox-cancel{
-  border-right: 1px solid #e5e5e5;
-}
-
-.mint-msgbox-btns {
-  height: 1rem;
-}
-
-.mint-msgbox-btns button {
-  font-size: 0.36rem;
-}
-
-.mint-msgbox-input {
-  padding-top: 0.2rem;
-}
-
-.mint-msgbox-input input {
-  height: 0.8rem;
-  background-color: #f4f4f4;
-  font-size: 0.36rem;
-  padding-left: 0.2rem;
-  border:none;
-  border-radius: 0.08rem;
-  color: #888;
-}
-.mint-msgbox-confirm{
-  color: #E4393C;
-}
-
-.mint-msgbox-message {
-  color: #1d1f22;
-  line-height: initial;
-}
-.selected {
-  background-color: #3f4b5f !important;
-  color: #fff !important;
-  font-size: 0.2rem;
-}
-
-.selected-t a {
-  opacity: 0.3;
-}
-.del li {
-  color: #ff2424 !important;
-}
-
-.my-share .mint-tab-container-item{
-  margin-top: 0.25rem;
-}
-.my-share .mint-tab-item-label{
-  font-size: 0.28rem !important;
-}
-.yp-topbar{
-  background-color: $topbar-background-color;
-}
-.head.yp-topbar {
-  height: 1.28rem;
-  line-height: 0.88rem;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  padding-top: 0;
+.van-step__title {
+  width: 13vh;
 }

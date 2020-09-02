@@ -2,7 +2,7 @@
 const configUrl = {
   baseUrl: 'http://47.103.15.136:8080',
   // 产品名称
-  productName: '兴旺屠宰场监管系统',
+  productName: '清洗机器人',
 
 }
 
